@@ -4,7 +4,8 @@ public abstract class ChessPiece {
     protected String pieceName;
     protected Colour colour;
     protected Position position;
-    private boolean hasMoved = false;
+    protected boolean hasMoved = false;
+    protected boolean wasKicked = false;
 
     public ChessPiece(Colour colour, Position position) {
         this.colour = colour;
@@ -37,6 +38,14 @@ public abstract class ChessPiece {
 
     public String getPieceName() {
         return pieceName;
+    }
+
+    public boolean isWasKicked() {
+        return wasKicked;
+    }
+
+    public void setWasKicked(boolean wasKicked) {
+        this.wasKicked = wasKicked;
     }
 
     public enum Colour {

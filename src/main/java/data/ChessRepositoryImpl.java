@@ -8,31 +8,31 @@ import domain.repository.ChessRepository;
 public class ChessRepositoryImpl implements ChessRepository {
     @Override
     public void newGame() {
-//        TODO
+//        TODO Here use to be a function for useCase
     }
 
     @Override
     public void finishGame() {
-//        TODO
+//        TODO Here use to be a function for useCase
     }
 
     @Override
     public void undoLastMove() {
-//        TODO
+//        TODO Here use to be a function for useCase
     }
 
     @Override
     public void makeMove(ChessPiece chessPiece, Position position) {
-//        TODO
+//        TODO Here use to be a function for useCase
     }
 
     @Override
     public void kickPiece(ChessPiece chessPiece, Position position) {
-//        TODO
+//        TODO Here use to be a function for useCase
     }
 
     @Override
     public void makeCastling(Rook rook, Position position) {
-//        TODO
+//        TODO Here use to be a function for useCase
     }
 }
