@@ -1,0 +1,86 @@
+@startuml
+
+package Domain{
+abstract class ChessPiece {
+    protected String pieceName
+    protected Colour colour
+    protected Position position
+    protected boolean hasMoved = false
+    protected boolean wasKicked = false
+    }
+
+interface ChessRepository{
+void newGame()
+void finishGame()
+void undoLastMove()
+void makeMove(ChessPiece chessPiece, Position position)
+void kickPiece(ChessPiece chessPiece, Position position)
+void makeCastling(Rook rook, Position position)
+}
+
+package UseCases{
+class FinishGameUseCase{
+private ChessRepository repository
+}
+
+class KickPieceUseCase{
+private ChessRepository repository
+}
+
+class MakeCastlingUseCase{
+private ChessRepository repository
+}
+
+class MakeMoveUseCase{
+private ChessRepository repository
+}
+
+class StartGameUseCase{
+private ChessRepository repository
+}
+
+class UndoLastMoveUseCase{
+private ChessRepository repository
+}
+}
+}
+
+
+
+package Data{
+class ChessRepositoryImpl{
+void newGame()
+void finishGame()
+void undoLastMove()
+void makeMove(ChessPiece chessPiece, Position position)
+void kickPiece(ChessPiece chessPiece, Position position)
+void makeCastling(Rook rook, Position position)
+}
+class ChessPieceDbEntity {
+    private String pieceName
+    private ChessPiece.Colour colour
+    private Position position
+    private boolean hasMoved
+    private boolean wasKicked
+    }
+    class ChessDataBase
+
+    class ChessMapper {
+        public ChessPieceDbEntity chessPieceToDbPiece(ChessPiece chessPiece)
+        public ChessPiece chessPieceDbToChessPiece(ChessPieceDbEntity chessPiece)
+}
+ChessPieceDbEntity<--ChessRepositoryImpl
+ChessMapper<--ChessRepositoryImpl
+ChessDataBase<--ChessRepositoryImpl
+}
+
+package Presentation{
+class SomeRealization
+}
+
+ChessRepository-->UseCases
+ChessRepositoryImpl-->ChessRepository
+UseCases-->Presentation
+
+
+@enduml
