@@ -1,0 +1,27 @@
+1) Requirements
+
+	Functional:
+	1) The application must have shapes
+	2) The application should place the pieces in their starting positions when starting a new game
+	3) Each type of figure must follow certain (specific to it) instructions for movement, and "capture"
+		and the possibility of "castling" of kings must also be implemented
+	4) If the "pawn" reaches the opposite edge of the board, a choice must be made to "turn" the pawn into a piece on (rook\knight\bishop\queen)
+	5) The game must end under the conditions of declaring a "checkmate" by one of the parties or if one of the partners decides to intentionally "pass" the game
+	6) The game must end on the terms of a "draw": if the parties agree, if a "stalemate" occurs(one of the parties does not have the opportunity to move),
+		if there is a lack of "material", or a triple repetition of the moves of one of the parties
+		
+	Non-functional:
+	1) The application must have a menu with game option
+	
+2) Usage scenario\ use cases
+
+	Interface
+	- As a player, I can have a menu(new game\exit\finish game) to manage the app state
+	- As a player, I can have the option to cancel a move to avoid inaccuracies.
+
+	Application
+	- As a player, I can be able to move the pieces to have the dynamics of the party
+	- As a player, I can use the options "finish game" \ "start new game"
+	- As a player, I can "knock down" the opponent's pieces to bring the end of the game closer
+	- As a player, I can make a "castling"
+	- As a player, I can declare "checkmate" to win the game
